@@ -11,7 +11,7 @@ The fancyindex module can be found [here](https://github.com/aperezdc/ngx-fancyi
 - Removed jQuery
 - Replaced showdown with [micromark](https://github.com/micromark/micromark) (+ [micromark-extension-gfm](https://github.com/micromark/micromark-extension-gfm))
   - Currently imported as ESM via esm.sh
-- Removed xregexp-all.js
+- Removed xregexp-all.js (not sure what this was used for)
 - Removed `Nginx-Fancyindex-Theme` folder (not sure what the difference was compared to the light theme)
 
 Removing unnecessary dependencies and using a much smaller Markdown parser reduced the page size by more than 90%.
@@ -24,9 +24,10 @@ Removing unnecessary dependencies and using a much smaller Markdown parser reduc
 1. Make sure you have the fancyindex module compiled with nginx, either by compiling it yourself or installing nginx via the full distribution (paquet `nginx-extras`).
 2. Include the content of [fancyindex.conf](fancyindex.conf) in your location directive (`location / {.....}`) in your nginx config (usually `nginx.conf`).
 3. Move the `Nginx-Fancyindex-Theme-light/` *and/or* `Nginx-Fancyindex-Theme-dark/` folder to the root of the site directory.
+   - Alternatively, `header.html` and `footer.html` can be adjusted so that assets are loaded from a different subpath by replacing `/Nginx-Fancyindex-Theme-light/`/`/Nginx-Fancyindex-Theme-dark/`.
 4. Restart/reload nginx.
 5. Check that it's working, and enjoy!
-6. A new feature is the automatic inclusion of `HEADER.md` and `README.md` file from the current directory (if any), as shown in the example above. It uses [JQuery](https://jquery.com/) and [ShowDown.js](https://github.com/showdownjs/showdown/), it is not so cleanly written but it works perfectly! I wanted this feature as I have it for Apache (see [this project](https://bitbucket.org/lbesson/autoindex-strapdown)).
+6. A new feature is the automatic inclusion of `HEADER.md` and `README.md` file from the current directory (if any), as shown in the example above. ~~It uses [JQuery](https://jquery.com/) and [ShowDown.js](https://github.com/showdownjs/showdown/), it is not so cleanly written but it works perfectly!~~ I wanted this feature as I have it for Apache (see [this project](https://bitbucket.org/lbesson/autoindex-strapdown)).
 
 ## Configuration
 
