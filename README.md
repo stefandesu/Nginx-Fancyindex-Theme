@@ -6,6 +6,16 @@ The fancyindex module can be found [here](https://github.com/aperezdc/ngx-fancyi
 
 [![made-for-nginx](https://img.shields.io/badge/Made%20for-nginx-1f425f.svg)](https://www.nginx.org/)
 
+## Changes from [Original Repo](https://github.com/Naereen/Nginx-Fancyindex-Theme)
+
+- Removed jQuery
+- Replaced showdown with [micromark](https://github.com/micromark/micromark) (+ [micromark-extension-gfm](https://github.com/micromark/micromark-extension-gfm))
+  - Currently imported as ESM via esm.sh
+- Removed xregexp-all.js
+- Removed `Nginx-Fancyindex-Theme` folder (not sure what the difference was compared to the light theme)
+
+Removing unnecessary dependencies and using a much smaller Markdown parser reduced the page size by more than 90%.
+
 ### Demonstration of the Light theme:
 ![Demo #5](screenshots/Nginx-Fancyindex-Theme__example5.png "Example of Nginx-Fancyindex-Theme-light")
 
